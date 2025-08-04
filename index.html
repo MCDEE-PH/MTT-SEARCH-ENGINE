@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTT</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    .animated-img {
+      width: 80px;
+      height: 80px;
+      animation: bounce 3s infinite;
+      margin: 0 10px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 12px;
+      padding: 5px 15px;
+      border-radius: 8px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎃 Skull and Skeleton Animation -->
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="Skulls.gif" alt="Grave" class="animated-img">
+  </div>
+
+  <!-- 🔄 Background Video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="Hallowindow_Skull_bounce_HD_720p_Wide.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🔊 Background Music -->
+  <audio id="bgmusic" loop autoplay>
+    <source src="Hallowindow_Skull_bounce_HD_720p_Wide.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <h1>MTT</h1>
+    <div id="countdown"></div>
+
+    <form class="search-box" onsubmit="performSearch(); return false;">
+      <input type="text" id="searchInput" placeholder="Search with Google..." />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="buttons">
+      <button onclick="window.location.href='https://bosscorporationservices.on.drv.tw/BOSSCORP/PORTFOLIO/Index.html'">MTT</button>
+      <button onclick="window.location.href='https://sweetmarbles.nicepage.io/Home.html'">SHOP</button>
+      <button onclick="window.location.href='https://paulasrock.github.io/ONLINE-SABONG-LOG-IN-PAGE/'">BLOGS</button>
+      <button onclick="window.location.href='https://yantoyasabo27.github.io/PHISNG/'">LOUNGE</button>
+    </div>
+
+    <div class="shortcuts" id="shortcuts"></div>
+  </div>
+
+  <!-- ⚙️ Customize Settings -->
+  <button class="customize-btn" onclick="toggleSettings()">Customize</button>
+
+  <div class="settings-panel" id="settingsPanel">
+    <label><input type="checkbox" onchange="toggleSound(this)"> Background Music</label>
+    <label>Themes (Coming Soon)</label>
+  </div>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    Copyright © 2019 BCT. All rights reserved.
+  </footer>
+
+  <!-- 🧠 Scripts -->
+  <script src="script.js"></script>
+
+  <!-- 🎵 Fix for Background Audio Autoplay -->
+  <script>
+    // Try to play music once user interacts
+    document.addEventListener("click", function () {
+      const music = document.getElementById("bgmusic");
+      if (music && music.paused) {
+        music.play().catch(e => {
+          console.log("Autoplay blocked:", e);
+        });
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>

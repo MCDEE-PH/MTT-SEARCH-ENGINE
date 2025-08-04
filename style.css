@@ -1,0 +1,110 @@
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: black;
+}
+video.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.container {
+  text-align: center;
+  padding-top: 80px;
+}
+.search-box {
+  margin-top: 20px;
+}
+.search-box input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+}
+.search-box button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.buttons, .shortcuts {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.buttons button, .shortcuts .shortcut {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+}
+.shortcuts .shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  border-radius: 20px;
+}
+.shortcut img {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+}
+#countdown {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.customize-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.settings-panel {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  background: rgba(0,0,0,0.9);
+  padding: 12px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+}
+.settings-panel label {
+  margin: 5px 0;
+}
